@@ -1,0 +1,862 @@
+min=38 at 1
+
+the vector is
+38 41 
+smoke is 3977
+min=79 at 1
+
+the vector is
+79 
+smoke is 5535
+5535
+min=12 at 3
+
+the vector is
+13 37 12 17 
+smoke is 2175
+min=29 at 3
+
+the vector is
+13 37 29 
+smoke is 2379
+min=50 at 1
+
+the vector is
+50 29 
+smoke is 2860
+min=79 at 1
+
+the vector is
+79 
+smoke is 4310
+4310
+min=3 at 7
+
+the vector is
+74 16 14 59 16 92 3 4 72 61 20 
+smoke is 2346
+min=7 at 7
+
+the vector is
+74 16 14 59 16 92 7 72 61 20 
+smoke is 2358
+min=8 at 5
+
+the vector is
+74 14 59 16 8 7 72 61 20 
+smoke is 3830
+min=15 at 5
+
+the vector is
+74 14 59 16 15 72 61 20 
+smoke is 3886
+min=31 at 4
+
+the vector is
+74 14 59 31 72 61 20 
+smoke is 4126
+min=3 at 4
+
+the vector is
+74 14 59 3 61 20 
+smoke is 6358
+min=62 at 3
+
+the vector is
+74 14 62 61 20 
+smoke is 6535
+min=23 at 3
+
+the vector is
+74 14 23 20 
+smoke is 10317
+min=37 at 2
+
+the vector is
+74 37 20 
+smoke is 10639
+min=11 at 1
+
+the vector is
+11 20 
+smoke is 13377
+min=31 at 1
+
+the vector is
+31 
+smoke is 13597
+13597
+min=0 at 3
+
+the vector is
+60 44 0 9 90 34 
+smoke is 2211
+min=4 at 1
+
+the vector is
+4 0 9 90 34 
+smoke is 4851
+min=4 at 1
+
+the vector is
+4 9 90 34 
+smoke is 4851
+min=13 at 1
+
+the vector is
+13 90 34 
+smoke is 4887
+min=3 at 1
+
+the vector is
+3 34 
+smoke is 6057
+min=37 at 1
+
+the vector is
+37 
+smoke is 6159
+6159
+min=5 at 3
+
+the vector is
+2 93 5 94 
+smoke is 2376
+min=95 at 1
+
+the vector is
+95 5 94 
+smoke is 2562
+min=0 at 1
+
+the vector is
+0 94 
+smoke is 3037
+min=94 at 1
+
+the vector is
+94 
+smoke is 3037
+3037
+min=15 at 2
+
+the vector is
+18 15 34 50 93 71 66 98 24 
+smoke is 3304
+min=22 at 8
+
+the vector is
+18 15 34 50 93 71 66 22 
+smoke is 5656
+min=33 at 1
+
+the vector is
+33 34 50 93 71 66 22 
+smoke is 5926
+min=37 at 5
+
+the vector is
+33 34 50 93 37 22 
+smoke is 10612
+min=30 at 4
+
+the vector is
+33 34 50 30 22 
+smoke is 14053
+min=52 at 4
+
+the vector is
+33 34 50 52 
+smoke is 14713
+min=2 at 3
+
+the vector is
+33 34 2 
+smoke is 17313
+min=36 at 2
+
+the vector is
+33 36 
+smoke is 17381
+min=69 at 1
+
+the vector is
+69 
+smoke is 18569
+18569
+min=19 at 6
+
+the vector is
+94 46 19 44 87 19 
+smoke is 3330
+min=6 at 5
+
+the vector is
+94 46 19 44 6 
+smoke is 4983
+min=40 at 1
+
+the vector is
+40 19 44 6 
+smoke is 9307
+min=50 at 3
+
+the vector is
+40 19 50 
+smoke is 9571
+min=59 at 1
+
+the vector is
+59 50 
+smoke is 10331
+min=9 at 1
+
+the vector is
+9 
+smoke is 13281
+13281
+min=9 at 6
+
+the vector is
+62 77 80 88 77 9 51 38 27 66 13 17 94 
+smoke is 1410
+min=11 at 12
+
+the vector is
+62 77 80 88 77 9 51 38 27 66 13 11 
+smoke is 3008
+min=24 at 11
+
+the vector is
+62 77 80 88 77 9 51 38 27 66 24 
+smoke is 3151
+min=39 at 1
+
+the vector is
+39 80 88 77 9 51 38 27 66 24 
+smoke is 7925
+min=19 at 1
+
+the vector is
+19 88 77 9 51 38 27 66 24 
+smoke is 11045
+min=7 at 1
+
+the vector is
+7 77 9 51 38 27 66 24 
+smoke is 12717
+min=60 at 3
+
+the vector is
+7 77 60 38 27 66 24 
+smoke is 13176
+min=37 at 2
+
+the vector is
+7 37 38 27 66 24 
+smoke is 17796
+min=44 at 1
+
+the vector is
+44 38 27 66 24 
+smoke is 18055
+min=65 at 2
+
+the vector is
+44 65 66 24 
+smoke is 19081
+min=9 at 1
+
+the vector is
+9 66 24 
+smoke is 21941
+min=75 at 1
+
+the vector is
+75 24 
+smoke is 22535
+min=99 at 1
+
+the vector is
+99 
+smoke is 24335
+24335
+min=3 at 11
+
+the vector is
+57 52 78 55 58 98 68 88 44 63 3 7 99 38 94 87 
+smoke is 2520
+min=6 at 12
+
+the vector is
+57 52 78 55 58 98 68 88 44 63 3 6 38 94 87 
+smoke is 3213
+min=7 at 9
+
+the vector is
+57 52 78 55 58 98 68 88 7 3 6 38 94 87 
+smoke is 5985
+min=9 at 1
+
+the vector is
+9 78 55 58 98 68 88 7 3 6 38 94 87 
+smoke is 8949
+min=9 at 9
+
+the vector is
+9 78 55 58 98 68 88 7 9 38 94 87 
+smoke is 8967
+min=13 at 3
+
+the vector is
+9 78 13 98 68 88 7 9 38 94 87 
+smoke is 12157
+min=11 at 3
+
+the vector is
+9 78 11 68 88 7 9 38 94 87 
+smoke is 13431
+min=16 at 6
+
+the vector is
+9 78 11 68 88 16 38 94 87 
+smoke is 13494
+min=4 at 5
+
+the vector is
+9 78 11 68 4 38 94 87 
+smoke is 14902
+min=32 at 6
+
+the vector is
+9 78 11 68 4 32 87 
+smoke is 18474
+min=19 at 6
+
+the vector is
+9 78 11 68 4 19 
+smoke is 21258
+min=23 at 5
+
+the vector is
+9 78 11 68 23 
+smoke is 21334
+min=79 at 3
+
+the vector is
+9 78 79 23 
+smoke is 22082
+min=2 at 3
+
+the vector is
+9 78 2 
+smoke is 23899
+min=80 at 2
+
+the vector is
+9 80 
+smoke is 24055
+min=89 at 1
+
+the vector is
+89 
+smoke is 24775
+24775
+min=14 at 3
+
+the vector is
+29 34 14 96 2 
+smoke is 3213
+min=10 at 3
+
+the vector is
+29 34 10 2 
+smoke is 4557
+min=12 at 3
+
+the vector is
+29 34 12 
+smoke is 4577
+min=46 at 2
+
+the vector is
+29 46 
+smoke is 4985
+min=75 at 1
+
+the vector is
+75 
+smoke is 6319
+6319
+min=16 at 1
+
+the vector is
+16 85 37 
+smoke is 3363
+min=1 at 1
+
+the vector is
+1 37 
+smoke is 4723
+min=38 at 1
+
+the vector is
+38 
+smoke is 4760
+4760
+min=8 at 2
+
+the vector is
+39 8 70 87 10 69 62 32 
+smoke is 2916
+min=31 at 6
+
+the vector is
+39 8 70 87 10 31 32 
+smoke is 7194
+min=41 at 5
+
+the vector is
+39 8 70 87 41 32 
+smoke is 7504
+min=28 at 4
+
+the vector is
+39 8 70 28 32 
+smoke is 11071
+min=47 at 1
+
+the vector is
+47 70 28 32 
+smoke is 11383
+min=17 at 1
+
+the vector is
+17 28 32 
+smoke is 14673
+min=45 at 1
+
+the vector is
+45 32 
+smoke is 15149
+min=77 at 1
+
+the vector is
+77 
+smoke is 16589
+16589
+min=26 at 2
+
+the vector is
+26 26 37 
+smoke is 153
+min=52 at 1
+
+the vector is
+52 37 
+smoke is 829
+min=89 at 1
+
+the vector is
+89 
+smoke is 2753
+2753
+min=13 at 3
+
+the vector is
+21 11 13 43 1 
+smoke is 3082
+min=24 at 2
+
+the vector is
+21 24 43 1 
+smoke is 3225
+min=44 at 3
+
+the vector is
+21 24 44 
+smoke is 3268
+min=45 at 1
+
+the vector is
+45 44 
+smoke is 3772
+min=89 at 1
+
+the vector is
+89 
+smoke is 5752
+5752
+min=13 at 14
+
+the vector is
+8 69 60 0 35 27 96 91 32 51 14 77 58 13 
+smoke is 36
+min=23 at 6
+
+the vector is
+8 69 60 0 35 23 91 32 51 14 77 58 13 
+smoke is 2628
+min=14 at 6
+
+the vector is
+8 69 60 0 35 14 32 51 14 77 58 13 
+smoke is 4721
+min=29 at 2
+
+the vector is
+8 29 0 35 14 32 51 14 77 58 13 
+smoke is 8861
+min=29 at 2
+
+the vector is
+8 29 35 14 32 51 14 77 58 13 
+smoke is 8861
+min=35 at 8
+
+the vector is
+8 29 35 14 32 51 14 35 13 
+smoke is 13327
+min=37 at 1
+
+the vector is
+37 35 14 32 51 14 35 13 
+smoke is 13559
+min=46 at 3
+
+the vector is
+37 35 46 51 14 35 13 
+smoke is 14007
+min=48 at 6
+
+the vector is
+37 46 51 14 35 48 
+smoke is 14462
+min=49 at 4
+
+the vector is
+37 46 51 49 48 
+smoke is 14952
+min=0 at 3
+
+the vector is
+37 46 0 48 
+smoke is 17451
+min=46 at 2
+
+the vector is
+37 46 48 
+smoke is 17451
+min=83 at 1
+
+the vector is
+83 48 
+smoke is 19153
+min=31 at 1
+
+the vector is
+31 
+smoke is 23137
+23137
+min=6 at 4
+
+the vector is
+9 14 94 6 40 76 21 24 46 10 
+smoke is 2584
+min=0 at 3
+
+the vector is
+9 14 0 40 76 21 24 46 10 
+smoke is 3148
+min=14 at 2
+
+the vector is
+9 14 40 76 21 24 46 10 
+smoke is 3148
+min=16 at 3
+
+the vector is
+9 14 16 21 24 46 10 
+smoke is 6188
+min=23 at 1
+
+the vector is
+23 16 21 24 46 10 
+smoke is 6314
+min=37 at 2
+
+the vector is
+23 37 24 46 10 
+smoke is 6650
+min=56 at 4
+
+the vector is
+23 37 24 56 
+smoke is 7110
+min=60 at 1
+
+the vector is
+60 24 56 
+smoke is 7961
+min=80 at 2
+
+the vector is
+60 80 
+smoke is 9305
+min=40 at 1
+
+the vector is
+40 
+smoke is 14105
+14105
+min=61 at 1
+
+the vector is
+61 
+smoke is 624
+624
+min=2 at 1
+
+the vector is
+2 53 67 73 75 86 83 71 42 
+smoke is 1157
+min=13 at 8
+
+the vector is
+2 53 67 73 75 86 83 13 
+smoke is 4139
+min=20 at 2
+
+the vector is
+2 20 73 75 86 83 13 
+smoke is 7690
+min=22 at 1
+
+the vector is
+22 73 75 86 83 13 
+smoke is 7730
+min=48 at 2
+
+the vector is
+22 48 86 83 13 
+smoke is 13205
+min=34 at 2
+
+the vector is
+22 34 83 13 
+smoke is 17333
+min=17 at 2
+
+the vector is
+22 17 13 
+smoke is 20155
+min=30 at 2
+
+the vector is
+22 30 
+smoke is 20376
+min=52 at 1
+
+the vector is
+52 
+smoke is 21036
+21036
+min=4 at 13
+
+the vector is
+27 72 14 71 47 81 45 96 24 8 5 78 4 18 69 1 91 55 68 
+smoke is 2695
+min=13 at 10
+
+the vector is
+27 72 14 71 47 81 45 96 24 13 78 4 18 69 1 91 55 68 
+smoke is 2735
+min=18 at 4
+
+the vector is
+27 72 14 18 81 45 96 24 13 78 4 18 69 1 91 55 68 
+smoke is 6072
+min=20 at 7
+
+the vector is
+27 72 14 18 81 45 20 13 78 4 18 69 1 91 55 68 
+smoke is 8376
+min=22 at 10
+
+the vector is
+27 72 14 18 81 45 20 13 78 22 69 1 91 55 68 
+smoke is 8448
+min=0 at 9
+
+the vector is
+27 72 14 18 81 45 20 13 0 69 1 91 55 68 
+smoke is 10164
+min=13 at 8
+
+the vector is
+27 72 14 18 81 45 20 13 69 1 91 55 68 
+smoke is 10164
+min=23 at 12
+
+the vector is
+27 72 14 18 81 45 20 13 69 1 91 23 
+smoke is 13904
+min=14 at 11
+
+the vector is
+27 72 14 18 81 45 20 13 69 1 14 
+smoke is 15997
+min=15 at 10
+
+the vector is
+27 72 14 18 81 45 20 13 69 15 
+smoke is 16011
+min=26 at 5
+
+the vector is
+27 72 14 18 26 20 13 69 15 
+smoke is 19656
+min=32 at 3
+
+the vector is
+27 72 32 26 20 13 69 15 
+smoke is 19908
+min=4 at 2
+
+the vector is
+27 4 26 20 13 69 15 
+smoke is 22212
+min=30 at 2
+
+the vector is
+27 30 20 13 69 15 
+smoke is 22316
+min=33 at 3
+
+the vector is
+27 30 33 69 15 
+smoke is 22576
+min=2 at 3
+
+the vector is
+27 30 2 15 
+smoke is 24853
+min=17 at 3
+
+the vector is
+27 30 17 
+smoke is 24883
+min=47 at 2
+
+the vector is
+27 47 
+smoke is 25393
+min=74 at 1
+
+the vector is
+74 
+smoke is 26662
+26662
+min=30 at 2
+
+the vector is
+88 30 
+smoke is 29
+min=18 at 1
+
+the vector is
+18 
+smoke is 2669
+2669
+min=0 at 4
+
+the vector is
+35 35 68 0 48 20 43 8 64 11 38 33 60 28 93 31 22 
+smoke is 196
+min=3 at 2
+
+the vector is
+35 3 0 48 20 43 8 64 11 38 33 60 28 93 31 22 
+smoke is 2576
+min=3 at 2
+
+the vector is
+35 3 48 20 43 8 64 11 38 33 60 28 93 31 22 
+smoke is 2576
+min=21 at 12
+
+the vector is
+35 3 48 20 43 8 64 11 38 33 60 21 31 22 
+smoke is 5180
+min=38 at 1
+
+the vector is
+38 48 20 43 8 64 11 38 33 60 21 31 22 
+smoke is 5285
+min=49 at 7
+
+the vector is
+38 48 20 43 8 64 49 33 60 21 31 22 
+smoke is 5703
+min=13 at 6
+
+the vector is
+38 48 20 43 8 13 33 60 21 31 22 
+smoke is 8839
+min=21 at 5
+
+the vector is
+38 48 20 43 21 33 60 21 31 22 
+smoke is 8943
+min=52 at 8
+
+the vector is
+38 48 20 43 33 60 21 52 22 
+smoke is 9594
+min=63 at 3
+
+the vector is
+38 48 63 33 60 21 52 22 
+smoke is 10454
+min=11 at 2
+
+the vector is
+38 11 33 60 21 52 22 
+smoke is 13478
+min=44 at 2
+
+the vector is
+38 44 60 21 52 22 
+smoke is 13841
+min=4 at 2
+
+the vector is
+38 4 21 52 22 
+smoke is 16481
+min=25 at 2
+
+the vector is
+38 25 52 22 
+smoke is 16565
+min=63 at 1
+
+the vector is
+63 52 22 
+smoke is 17515
+min=15 at 1
+
+the vector is
+15 22 
+smoke is 20791
+min=37 at 1
+
+the vector is
+37 
+smoke is 21121
+21121
+min=67 at 1
+
+the vector is
+67 
+smoke is 1116
+1116
