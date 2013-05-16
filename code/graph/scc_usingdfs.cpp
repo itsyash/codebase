@@ -49,8 +49,9 @@ typedef vector<vi > vvi;
 #define debug 1 
 
 void pushtostack(int v,int visited[],stack<int> &stk);
+void pushtostack2(int v,int visited[]);
 list<int> *adj;
-
+list<int> *Tadj;
 int main(){
 	
 	int v;
@@ -86,10 +87,27 @@ int main(){
 		if(visited[i]==0)
 			pushtostack(i,visited,stk);
 	}	
-	cout<<"sorted:\n";
+	
+	//2nd part : transpose graph
+	Tadj = new list<int>[v];
+	
+	REP(i,v){
+			tr(adj[i],it){
+				Tadj[*it].pb(i);
+			}
+	}
+	
+	
+	REP(i,v)
+		visited[i]=0;
+	cout<<"components:\n";
 	while(!stk.empty()){
-		cout<<stk.top()<<" ";
+		int x = stk.top();
 		stk.pop();
+		if(visited[x]==0){
+			pushtostack2(x,visited);
+			cout<<endl;
+		}
 	}
 	return 0;
 }
@@ -104,4 +122,16 @@ void pushtostack(int v,int visited[],stack<int> &stk){
 			pushtostack(*it,visited,stk);
 	}
 	stk.push(v);
+}
+
+void pushtostack2(int v,int visited[]){
+	
+	visited[v]=1;
+	cout<<v<<" ";
+	list<int>::iterator it;
+	tr(Tadj[v],it){
+		if(visited[*it]==0)
+			pushtostack2(*it,visited);
+	}
+	
 }

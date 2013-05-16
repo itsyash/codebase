@@ -46,9 +46,11 @@ typedef vector<vi > vvi;
 #define PI 3.14159265359
 #define DegToRad(a) PI/180*a
 #define RadToDeg(a) 180/PI*a
-#define debug 1 
+#define debug 0
 
-void pushtostack(int v,int visited[],stack<int> &stk);
+void performdfs(int v,int visited[]);
+
+
 list<int> *adj;
 
 int main(){
@@ -80,28 +82,25 @@ int main(){
 	REP(i,v)
 		visited[i]=0;
 	
-	stack<int> stk;
+	cout<<"DFS is\n";
 		
 	REP(i,v){
 		if(visited[i]==0)
-			pushtostack(i,visited,stk);
+			performdfs(i,visited);
 	}	
-	cout<<"sorted:\n";
-	while(!stk.empty()){
-		cout<<stk.top()<<" ";
-		stk.pop();
-	}
+	
 	return 0;
 }
 
-void pushtostack(int v,int visited[],stack<int> &stk){
+void performdfs(int v,int visited[]){
 	
+	cout<<v<<" ";
 	visited[v]=1;
 	
 	list<int>::iterator it;
 	tr(adj[v],it){
 		if(visited[*it]==0)
-			pushtostack(*it,visited,stk);
+			performdfs(*it,visited);
 	}
-	stk.push(v);
+	
 }
