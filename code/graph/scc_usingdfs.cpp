@@ -1,4 +1,4 @@
-/* Author : Yashasvi girdhar
+/*
 */
 
 /* Data Structure Includes */
