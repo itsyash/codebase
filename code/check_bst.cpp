@@ -1,5 +1,5 @@
 /* Author : Yashasvi girdhar
- */
+*/
 
 /* Data Structure Includes */
 #include <vector>
@@ -46,42 +46,64 @@ typedef vector<vi > vvi;
 #define PI 3.14159265359
 #define DegToRad(a) PI/180*a
 #define RadToDeg(a) 180/PI*a
-#define debug 1 
+#define debug 1
+#define INT_MAX 99999
+#define INT_MIN -99999
 int gcd(int a,int b){
-    if(b>a) return gcd(b,a);
-    return b==0?a:gcd(b,a%b);
+	    if(b>a) return gcd(b,a);
+	        return b==0?a:gcd(b,a%b);
 }
 
-void printstrings(char a[],int n,int k,string temp){
+struct node{
+    int data;
+    node* left;
+    node* right;
+};
 
-    if(k==0){
-        cout<<temp<<endl;
-        return;
-    }
-
-    for(int i=0;i<n;i++){
-        string tempnew = temp + a[i];
-        //cout<<temp<<endl;
-        printstrings(a,n,k-1,tempnew);
-    }
+node* newnode(int data){
+    node* temp = (node *)malloc(sizeof(node));
+    temp->data = data;
+    temp->left = NULL;
+    temp->right = NULL;
+    return temp;
 }
+
+void inorder(node *tree){
+    if(tree==NULL)return;
+    inorder(tree->left);
+    cout<<tree->data<<" ";
+    inorder(tree->right);
+    return;
+}
+
+bool checkbst(node *start,int max,int min){
+    
+    if(start==NULL)
+        return true;
+    
+    //printf("for start=%d min=%d max=%d\n",start->data,min,max);
+    if(start->data <= min || start->data > max)
+        return false;
+
+    return ( checkbst(start->left,start->data+1,min) && checkbst(start->right,max,start->data) );//assuming duplicates are sent to the left side
+
+} 
+
+
+
 
 int main(){
     int tc;
-    //	si(tc);
-    //	REP(t,tc){
-    char a[2]={'a','b'};
-    int k = sizeof(a)/sizeof(a[0]);
-    string temp = "";
-    printstrings(a,2,k,"");
-    //	}
+    node *root = newnode(4);
+    root->left        = newnode(2);
+    root->right       = newnode(5);
+    root->left->left  = newnode(1);
+    root->left->right = newnode(3); 
+    
+    inorder(root);
+    if(checkbst(root,INT_MAX,INT_MIN))
+            printf("Is BST");
+      else
+              printf("Not a BST");
     return 0;
 }
-
-
-
-
-
-
-
-

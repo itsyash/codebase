@@ -52,36 +52,44 @@ int gcd(int a,int b){
     return b==0?a:gcd(b,a%b);
 }
 
-void printstrings(char a[],int n,int k,string temp){
-
-    if(k==0){
-        cout<<temp<<endl;
-        return;
+int calculate(int a[],int n,int i,int j,int k,int ans){
+    printf("for i=%d j=%d k=%d\n",i,j,k);
+    //if(j==0 || j==n-1)return ans;
+   // int i=j-1 , k=j+1;
+    while(i>=0 && k<=n-1){
+        printf("i=%d k=%d\n",i,k);
+        if(a[i]+a[k] == 2*a[j]){
+            printf("found ap for i=%d j=%d k=%d\n",i,j,k);
+            int temp = calculate(a,n,i-1,i,j,ans+1) + calculate(a,n,j,k,k+1,ans+1);
+            if(temp > ans)
+                ans = temp;
+            break;
+        }
+        else if(a[i]+a[k]>2*a[j])
+            i--;
+        else
+            k++;
     }
-
-    for(int i=0;i<n;i++){
-        string tempnew = temp + a[i];
-        //cout<<temp<<endl;
-        printstrings(a,n,k-1,tempnew);
-    }
+    cout<<"returning ans="<<ans<<endl;
+    return ans; 
 }
 
 int main(){
     int tc;
-    //	si(tc);
-    //	REP(t,tc){
-    char a[2]={'a','b'};
-    int k = sizeof(a)/sizeof(a[0]);
-    string temp = "";
-    printstrings(a,2,k,"");
-    //	}
+    si(tc);
+    REP(t,tc){
+        int n;
+        si(n);
+        int a[n];
+        REP(i,n)
+            si(a[i]);
+        int ans=2;
+        for(int i=1;i<n-1;i++){
+            int temp = calculate(a,n,i-1,i,i+1,2);
+            if(ans < temp)
+                ans = temp;
+        }
+        cout<<"ans = "<<ans<<endl;
+    }
     return 0;
 }
-
-
-
-
-
-
-
-
