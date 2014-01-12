@@ -19,8 +19,6 @@
 #include <sstream>
 #include <iostream>
 #include <iomanip>
-#include<math.h>
-#include<limits.h>
 
 /* C Includes */
 #include <cstdio>
@@ -28,7 +26,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <cstring>
-#include<stdio.h>
+
 using namespace std;
 typedef vector<int > vi;
 typedef vector<long long int > vl;
@@ -49,54 +47,50 @@ typedef vector<vi > vvi;
 #define DegToRad(a) PI/180*a
 #define RadToDeg(a) 180/PI*a
 #define debug 1 
-#define MAXSIZE 10000
-#define n 6
-int M[MAXSIZE];
-
 int gcd(int a,int b){
     if(b>a) return gcd(b,a);
     return b==0?a:gcd(b,a%b);
 }
-//node is the index of the segment tree m, start and end are the index of the the array A
-void BuildTree(int node,int start,int end,int A[],int N){
-    //printf("for start=%d end%d and node=%d\n",start,end,node);
-    if(start==end){
-        M[node]=A[start];
-       // printf("M[%d]=%d\n",node,M[node]);
-    }
-    else{
-        BuildTree(2*node+1,start,(start+end)/2,A,N);
-        BuildTree(2*node+2,(start+end)/2+1,end,A,N);
-        M[node]=min(M[2*node+1],M[2*node+2]);
-      //printf("M[%d]=%d\n",node,M[node]);
-    }
+
+struct node{
+    int data;
+    node *next;
+    node *back;
+};
+
+int n;
+
+void insert(node *start,int n){
+    while(start->next)
+        start = start->next;
+    start->next = (node *)malloc(sizeof(node));
+    start->next->data = n;
+    start->next->next = NULL;
+    start->next->back = start;
 }
 
-int RMQ(int node,int start,int end,int s,int e){
-    if(s<=start && e>=end)
-        return M[node];
-    else if(s>end || e<start)
-        return -1;
-    int q1 = RMQ(2*node+1,start,(start+end)/2,s,e);
-    int q2 = RMQ(2*node+2,(start+end)/2+1,end,s,e);
-    if(q1==-1)
-        return q2;
-    else if(q2==-1)
-        return q1;
-    if(q1<q2)
-        return q1;
-    return q2;
+void printlist(node *start){
+    while(start){
+        printf("back=%d\t",start->back->data);
+        printf("node-%d\t",start->data);
+        if(start->next)
+           printf("next=%d\n",start->next->data);
+        start=start->next;
+    }
+    cout<<endl;
 }
 
 int main(){
-
-    int a[n] = {2,5,1,4,9,3};
-    BuildTree(0,0,n-1,a,10);
-    
-    int qs = 4;  // Starting index of query range
-    int qe = 5;// Ending index of query range
-
-    // Print minimum value in arr[qs..qe]
-    printf("Minimum of values in range [%d, %d] is = %d\n",qs, qe, RMQ(0,0, n-1,qs,qe));
+    node *start=NULL;
+    start = (node *)malloc(sizeof(node));
+    start->next=NULL;
+    start->back=NULL;
+    si(n);
+    REP(i,n){
+        int temp;
+        si(temp);
+        insert(start,temp);
+    }
+    printlist(start->next);
     return 0;
 }

@@ -1,5 +1,6 @@
 /* Author : Yashasvi girdhar
-*/
+Find the minimum element in a sorted and rotated array
+ */
 
 /* Data Structure Includes */
 #include <vector>
@@ -46,64 +47,44 @@ typedef vector<vi > vvi;
 #define PI 3.14159265359
 #define DegToRad(a) PI/180*a
 #define RadToDeg(a) 180/PI*a
-#define debug 0
-
-void performdfs(int v,int visited[]);
-
-
-list<int> *adj;
-
-int main(){
-	
-	int v;
-	si(v);
-	adj = new list<int>[v];
-	int e;
-	si(e);
-	int m,n;
-	REP(i,e){
-		si(m);
-		si(n);
-		adj[m].pb(n);
-        adj[n].pb(m);
-	}
-	list<int>::iterator it;
-	if(debug){
-		REP(i,v){
-			tr(adj[i],it){
-				cout<<*it<<" ";
-			}
-			cout<<endl;
-		}
-	}
-	
-	//start sorting
-	
-	int visited[v];
-	REP(i,v)
-		visited[i]=0;
-	
-	cout<<"DFS is\n";
-		
-	for(int i=0;i<v;i++){
-		if(visited[i]==0){
-            cout<<"next component\n";
-			performdfs(i,visited);
-        }
-	}	
-	
-	return 0;
+#define debug 1 
+int gcd(int a,int b){
+	    if(b>a) return gcd(b,a);
+	        return b==0?a:gcd(b,a%b);
 }
 
-void performdfs(int v,int visited[]){
-	
-	cout<<v<<" ";
-	visited[v]=1;
-	
-	list<int>::iterator it;
-	tr(adj[v],it){
-		if(visited[*it]==0)
-			performdfs(*it,visited);
-	}
-	
+int binarysearch(int a[],int size,int start,int end){
+    int mid = (start+end)/2;
+    
+    if(start>end)
+        return 0;
+    
+    if(a[end] > a[start])
+        return 0;
+    if(a[mid]<a[mid-1])
+        return mid;
+
+    if(a[mid]>a[end])
+        return binarysearch(a,size,mid+1,end);
+    else if(a[mid]<a[end])
+        return binarysearch(a,size,start,mid-1);
+}
+
+int main(){
+    int tc;
+    si(tc);
+    REP(t,tc){
+        int n;
+        si(n);
+        int a[n];
+        REP(i,n)
+            si(a[i]);
+        REP(i,n)
+            cout<<a[i]<<" ";
+        cout<<endl;
+        int index=1;
+        index = binarysearch(a,n,0,n-1);
+        cout<<"index="<<index<<endl;
+    }
+	return 0;
 }

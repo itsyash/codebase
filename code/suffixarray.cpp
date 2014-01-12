@@ -1,5 +1,5 @@
 /* Author : Yashasvi girdhar
- */
+*/
 
 /* Data Structure Includes */
 #include <vector>
@@ -19,8 +19,6 @@
 #include <sstream>
 #include <iostream>
 #include <iomanip>
-#include<math.h>
-#include<limits.h>
 
 /* C Includes */
 #include <cstdio>
@@ -28,7 +26,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <cstring>
-#include<stdio.h>
+
 using namespace std;
 typedef vector<int > vi;
 typedef vector<long long int > vl;
@@ -49,54 +47,73 @@ typedef vector<vi > vvi;
 #define DegToRad(a) PI/180*a
 #define RadToDeg(a) 180/PI*a
 #define debug 1 
-#define MAXSIZE 10000
-#define n 6
-int M[MAXSIZE];
-
 int gcd(int a,int b){
     if(b>a) return gcd(b,a);
     return b==0?a:gcd(b,a%b);
 }
-//node is the index of the segment tree m, start and end are the index of the the array A
-void BuildTree(int node,int start,int end,int A[],int N){
-    //printf("for start=%d end%d and node=%d\n",start,end,node);
-    if(start==end){
-        M[node]=A[start];
-       // printf("M[%d]=%d\n",node,M[node]);
+void swap(int *m,int *n){
+    int temp = *n;
+    *n = *m;
+    *m = temp;
+}
+struct sort_pred {
+    bool operator()(const std::pair<int,int> &left, const std::pair<int,int> &right) {
+        return left.first < right.first;
     }
-    else{
-        BuildTree(2*node+1,start,(start+end)/2,A,N);
-        BuildTree(2*node+2,(start+end)/2+1,end,A,N);
-        M[node]=min(M[2*node+1],M[2*node+2]);
-      //printf("M[%d]=%d\n",node,M[node]);
+};
+
+
+const int MAXN = 1 << 21;
+char *S;
+int N, gap;
+int sa[MAXN], pos[MAXN], tmp[MAXN], lcp[MAXN];
+
+bool sufCmp(int i, int j)
+{
+    if (pos[i] != pos[j])
+        return pos[i] < pos[j];
+    i += gap;
+    j += gap;
+    return (i < N && j < N) ? pos[i] < pos[j] : i > j;
+}
+
+void buildSA()
+{
+    N = strlen(S);
+    REP(i, N) sa[i] = i, pos[i] = S[i];
+    for (gap = 1;; gap *= 2)
+    {
+        sort(sa, sa + N, sufCmp);
+        REP(i, N - 1) tmp[i + 1] = tmp[i] + sufCmp(sa[i], sa[i + 1]);
+        REP(i, N) pos[sa[i]] = tmp[i];
+        if (tmp[N - 1] == N - 1) break;
     }
 }
 
-int RMQ(int node,int start,int end,int s,int e){
-    if(s<=start && e>=end)
-        return M[node];
-    else if(s>end || e<start)
-        return -1;
-    int q1 = RMQ(2*node+1,start,(start+end)/2,s,e);
-    int q2 = RMQ(2*node+2,(start+end)/2+1,end,s,e);
-    if(q1==-1)
-        return q2;
-    else if(q2==-1)
-        return q1;
-    if(q1<q2)
-        return q1;
-    return q2;
+void buildLCP()
+{
+    for (int i = 0, k = 0; i < N; ++i) if (pos[i] != N - 1)
+    {
+        for (int j = sa[pos[i] + 1]; S[i + k] == S[j + k];)
+            ++k;
+        lcp[pos[i]] = k;
+        if (k)--k;
+    }
 }
 
 int main(){
-
-    int a[n] = {2,5,1,4,9,3};
-    BuildTree(0,0,n-1,a,10);
-    
-    int qs = 4;  // Starting index of query range
-    int qe = 5;// Ending index of query range
-
-    // Print minimum value in arr[qs..qe]
-    printf("Minimum of values in range [%d, %d] is = %d\n",qs, qe, RMQ(0,0, n-1,qs,qe));
+	
+    S = strdup("banana");
+    buildSA();
+    buildLCP();
+    REP(i,N)
+        cout<<sa[i]<<" ";//sorted suffixes
+    cout<<endl;
+    REP(i,N)
+        cout<<pos[i]<<" ";//positions
+    cout<<endl;
+    REP(i,N)
+        cout<<lcp[i]<<" ";//lcp between i & i+1 in sa array
+    cout<<endl;
     return 0;
 }

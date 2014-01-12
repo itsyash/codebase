@@ -1,4 +1,4 @@
-/* Author : Yashasvi girdhar
+/*
 */
 
 /* Data Structure Includes */
@@ -47,54 +47,70 @@ typedef vector<vi > vvi;
 #define DegToRad(a) PI/180*a
 #define RadToDeg(a) 180/PI*a
 #define debug 1 
-int gcd(int a,int b){
-	    if(b>a) return gcd(b,a);
-	        return b==0?a:gcd(b,a%b);
+
+int dp[100][100];
+
+int calc(string s, int b, int e){
+
+    int &x  = dp[b][e];
+
+    if(b==e){
+        return x=0;
+    }
+
+    if(e-b==1){
+        if(s[b] != s[e])return x=1;
+        return x=0;
+    }
+
+    
+    if(x != -1)
+        return x;
+    if(s[b]==s[e]){
+        return x=calc(s,b+1,e-1);
+    }
+    return x=min(calc(s,b,e-1), calc(s,b+1,e))+1;
 }
-int m,n,x;
-map< pair<int,int>,int > cache; 
-int doit(int n,int m,int x){
-	
-	//cout<<"for n="<<n<<" m="<<m<<" x="<<x<<endl; 
-	if(n==1){
-		if(x>0 && x<=m){
-		//	cout<<"returning 1\n";
-			return 1;			//not storing these values in cache, as not needed,can directly return them always    instead of searching in the cache 								 
-		}
-		else{
-			//cout<<"returning 0\n"; 
-			return 0;
-		}
-	}
-	
-	pair<int,int> key = make_pair(n,x);
-	if(cache.find(key)!=cache.end()){
-		//cout<<"found..returning="<<cache[key]<<endl;
-		return cache[key];
-	}
-	//cout<<"calculating\n";
-	int res=0;
-	for(int i=1;i<=m;i++){
-		if(x-i>0)	//sum >0
-			res += doit(n-1,m,x-i);
-	}
-	//cout<<"returning "<<res<<endl;
-	return cache[key]=res;
-	
+
+int l[100][100];
+
+int compute_lcs(string p, string q, int m, int n){
+    int &x = l[m][n];
+    if(x != -1)
+        return x;
+    if(m==0 && n==0 && p[m]==q[n])
+        return x=1;
+    if(m==0 || n==0)return x=0;
+
+    if(p[m]==q[n]){
+        return x=compute_lcs(p,q,m-1,n-1) + 1;
+    }
+    return x=max(compute_lcs(p,q,m,n-1), compute_lcs(p,q,m-1,n) );
+
 }
-	
+
+ bool isP(string s) {
+      int n = s.size();
+      for (int i=0;i<(n / 2) + 1;++i) {
+         if (s[i] != s[n - i - 1]) {
+             return false;
+         }
+      }
+      return true;
+    }
+
 int main(){
-	
-	si(n);si(m);si(x);
-	//dp
-	cache.clear();
-	
-	int ans;
-	ans=doit(n,m,x);
-	map< pair<int,int>,int >::iterator it;
-	for(it=cache.begin() ; it!=cache.end() ; it++)
-		cout << it->first.first << " " << it->first.second << " -> "<< it->second<<endl;
-	
-	cout<<ans<<endl;
-	return 0;
+    string s;
+    cin >> s;
+    int sz = s.size();
+    memset(dp,-1,sizeof(dp));
+    memset(l,-1,sizeof(l));
+    cout<<calc(s,0,sz-1)<<endl;
+    string r = s;
+    reverse(r.begin(),r.end());
+    int lc = compute_lcs(s,r,sz-1,sz-1);
+    cout<<"lcs of "<<s<<" "<<r<<" "<<lc<<endl;
+    cout<<sz - lc<<endl;
+    cout<<isP(s)<<endl;
+    return 0;
 }

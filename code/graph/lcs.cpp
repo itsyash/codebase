@@ -54,6 +54,11 @@ struct node{
 	node *right;
 };
 
+void swap(int *m,int *n){
+    int temp = *n;
+    *n = *m;
+    *m = temp;
+}
 
 node* newnode(){
 	//cout<<"new node\n";
@@ -63,7 +68,6 @@ node* newnode(){
 	temp->right=NULL;
 	return temp;
 }
-
 void insert(node **root,int n){
 	//cout<<"inserting "<<n<<endl;
 	if((*root)==NULL){//root
@@ -90,64 +94,47 @@ void printtree(node **root){
 	printtree(&((*root)->right));
 }
 
-vector<int> postorderTraversal(node *root) {
-        vector<int> a;
-        if(!root)
-            return a;
-            
-        stack<node*> s;
-        s.push(root);
-        while(!s.empty()){
-            node *t = s.top();
-            cout<<" t is "<< t->data<<endl;
-            if(t->right){
-            	cout<<"right "<<t->right->data<<endl;
-            	node *temp= t->right;
-                s.push(temp);
-               
-            }
-            if(t->left){
-            	cout<<"left "<<t->left->data<<endl;
-            	node *temp = t->left;
-                s.push(temp);
-                
-            }
-            if(!t->left && !t->right){
-                cout<<"vector push\n";
-                a.push_back(t->data);
-                s.pop();
-                // t=NULL;
-            }
-             t->right = NULL;
-             t->left = NULL;
-        }
-         return a;
+int lcs(node **root, int m,int n){
+    node *temp = *root;
+    if(m==temp->data || n==temp->data)
+        return temp->data;
+    if(m<=temp->data && n>temp->data)
+        return temp->data;
+    if(m<=temp->data && n<=temp->data)
+        return lcs(&(temp->left),m,n);
+    if(m>temp->data && n>temp->data)
+        return lcs(&(temp->right),m,n);
+
 }
 
+
+
 int main(){
-	int n;
-	si(n);
+	int t;
+	si(t);
 	
-	node *root=NULL;
+	node *root;
 	//initialize(&bst);
-	REP(i,n){
+	REP(i,t){
 		int temp;
 		si(temp);
 		insert(&root,temp);
 	}
 		
-	printtree(&root);		
-	cout<<endl;
-	int a;
-	std::vector<int> v;
-	v =  postorderTraversal(root);
-	for (int i = 0; i < v.size(); ++i)
-	{
-		cout<<v[i]<<" ";
-	}
-	cout<<endl;
-
-
-		
-	return 0;
+    printtree(&root);
+    cout<<endl;
+    int tc;
+    si(tc);
+    REP(i,tc){
+        int m,n;
+        si(m);
+        si(n);
+        if(m>n){
+            swap(&m,&n);
+        }
+        int ans;
+        ans = lcs(&root,m,n);   
+        cout<<ans<<endl;	
+    }
+    return 0;
 }

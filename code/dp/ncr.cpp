@@ -46,64 +46,51 @@ typedef vector<vi > vvi;
 #define PI 3.14159265359
 #define DegToRad(a) PI/180*a
 #define RadToDeg(a) 180/PI*a
-#define debug 0
-
-void performdfs(int v,int visited[]);
-
-
-list<int> *adj;
-
-int main(){
-	
-	int v;
-	si(v);
-	adj = new list<int>[v];
-	int e;
-	si(e);
-	int m,n;
-	REP(i,e){
-		si(m);
-		si(n);
-		adj[m].pb(n);
-        adj[n].pb(m);
-	}
-	list<int>::iterator it;
-	if(debug){
-		REP(i,v){
-			tr(adj[i],it){
-				cout<<*it<<" ";
-			}
-			cout<<endl;
-		}
-	}
-	
-	//start sorting
-	
-	int visited[v];
-	REP(i,v)
-		visited[i]=0;
-	
-	cout<<"DFS is\n";
-		
-	for(int i=0;i<v;i++){
-		if(visited[i]==0){
-            cout<<"next component\n";
-			performdfs(i,visited);
-        }
-	}	
-	
-	return 0;
+#define debug 1 
+int gcd(int a,int b){
+	    if(b>a) return gcd(b,a);
+	        return b==0?a:gcd(b,a%b);
 }
 
-void performdfs(int v,int visited[]){
-	
-	cout<<v<<" ";
-	visited[v]=1;
-	
-	list<int>::iterator it;
-	tr(adj[v],it){
-		if(visited[*it]==0)
-			performdfs(*it,visited);
-	}
-	
+int computencr(int n,int k){
+    int c[n+1][k+1];
+    REP(i,n+1){
+        REP(j,k+1){
+            if(j==i || j==0)
+                c[i][j]=1;
+            else if(j==1)
+                c[i][j]=i;
+            else if(i==0)
+                c[i][j]=0;
+            else 
+                c[i][j]=-1;
+        }
+    }
+    REP(i,n+1){
+        REP(j,k+1)
+            cout<<c[i][j]<<" ";
+        cout<<endl;
+    }
+    for(int i=1;i<n+1;i++){
+        for(int j=2;j<k+1;j++){
+            c[i][j]=c[i-1][j-1]+c[i-1][j];
+        }
+    }
+    return c[n][k];
+
+
+}
+
+int main(){
+    int tc;
+    si(tc);
+    REP(t,tc){
+        int k ,n;
+        si(n);
+        si(k);
+        int ans;
+        ans = computencr(n,k);
+        cout<<ans<<endl;
+    }
+	return 0;
 }

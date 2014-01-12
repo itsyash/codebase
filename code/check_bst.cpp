@@ -80,7 +80,7 @@ bool checkbst(node *start,int max,int min){
     
     if(start==NULL)
         return true;
-    
+
     //printf("for start=%d min=%d max=%d\n",start->data,min,max);
     if(start->data <= min || start->data > max)
         return false;
@@ -89,21 +89,80 @@ bool checkbst(node *start,int max,int min){
 
 } 
 
+vector<int> inorderTraversal(node *root) {
+        vector<int> a;
+        if(root==NULL)return a;
+        stack<node*> s;
+        node *cur=root;
+        bool done=true;
+        while(done){
+           cout<< cur->data<<endl;
+           if(!cur){
+               s.push(cur);
+               cur = cur->left;
+           }
+           else{
+            cout<<"else\n"<<s.size()<<endl;
+               if(s.empty())
+                    done=0;
+               else{
+                    cout<<"yo\n";
+                   cur = s.top();
+                   s.pop();
+                   a.push_back(cur->data);
+                   cur = cur->right;
+               }
+           }
+        }
+        return a;
+}
 
 
+bool isBST(struct node* root)
+{
+    static struct node *prev = NULL;    //static
+
+    // traverse the tree in inorder fashion and keep track of prev node
+    if (root)
+    {
+        if (!isBST(root->left))
+            return false;
+
+        // Allows only distinct valued nodes 
+        if (prev != NULL && root->data <= prev->data)
+            return false;
+
+        prev = root;
+
+        return isBST(root->right);
+    }
+
+    return true;
+}
 
 int main(){
     int tc;
-    node *root = newnode(4);
-    root->left        = newnode(2);
-    root->right       = newnode(5);
-    root->left->left  = newnode(1);
-    root->left->right = newnode(3); 
-    
+    node *root = newnode(1);
+    // root->left        = newnode(2);
+    // root->right       = newnode(5);
+    // root->left->left  = newnode(1);
+    // root->left->right = newnode(3); 
+
     inorder(root);
     if(checkbst(root,INT_MAX,INT_MIN))
-            printf("Is BST");
-      else
-              printf("Not a BST");
+        printf("Is BST\n");
+    else
+        printf("Not a BST\n");
+    
+    if(isBST(root))
+        printf("Is BST\n");
+    else
+        printf("Not a BST\n");
+
+    std::vector<int> ans = inorderTraversal(root);
+    for (std::vector<int>::iterator i = ans.begin(); i != ans.end(); ++i)
+    {
+        cout<<"*"<<*i<<endl;
+    }
     return 0;
 }
